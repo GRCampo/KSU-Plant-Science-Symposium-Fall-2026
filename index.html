@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Essential Overlaps for Crop Improvement</title>
+
+  <!-- Bootstrap 5 (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts: Titles (Cormorant SC) + Body (Lora) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body id="top">
+  <!-- =========================================================
+       Top header (not fixed)
+       ========================================================= -->
+  <header class="top-header">
+    <div class="top-header__inner">
+      <div class="top-header__logo">
+        <img
+          src="assets/img/ksu_logo_white.png"
+          alt="Kansas State University"
+          class="ksu-logo"
+        />
+      </div>
+    </div>
+  </header>
+
+  <!-- Accent bar (signature strip below the top header) -->
+  <div class="hero-accent" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       Mobile navigation (only visible below lg)
+       ========================================================= -->
+  <nav class="navbar navbar-dark bg-dark d-lg-none mobile-nav" aria-label="Mobile navigation">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+        <span class="mobile-logo" aria-hidden="true"></span>
+        <span class="fs-6">Essential Overlaps</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mobileMenu"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        aria-label="Toggle mobile menu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse" id="mobileMenu">
+      <div class="bg-dark px-3 pb-3">
+        <!-- Keep as placeholders; update when sections exist -->
+        <a class="mobile-link" href="#home">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       Desktop sidebar (fixed, only visible at lg and above)
+       ========================================================= -->
+  <aside class="sidebar d-none d-lg-flex" aria-label="Sidebar navigation">
+    <div class="sidebar__inner">
+      <a class="logo-wrap" href="#top" aria-label="Back to top">
+        <div class="logo-circle">
+          <img
+            src="assets/img/logo2_4x.png"
+            alt="Essential Overlaps logo"
+            class="logo-img"
+          />
+        </div>
+      </a>
+
+      <nav class="side-nav" aria-label="Site pages">
+        <a class="side-link is-active" href="index.html">Home</a>
+        <a class="side-link" href="about.html">About</a>
+        <a class="side-link" href="speakers.html">Speakers</a>
+        <a class="side-link" href="program.html">Program</a>
+        <a class="side-link" href="registration.html">Registration</a>
+        <a class="side-link" href="submissions.html">Submissions</a>
+        <a class="side-link" href="travel.html">Travel</a>
+        <a class="side-link" href="committee.html">Committee and volunteer</a>
+        <a class="side-link" href="sponsors.html">Sponsors</a>
+        <a class="side-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- =========================================================
+       Main content
+       ========================================================= -->
+  <main class="main">
+    <!-- Title block -->
+    <section class="title-row">
+      <div class="container-fluid px-3 px-md-4">
+        <h1 class="site-title mb-2">
+          ESSENTIAL OVERLAPS FOR CROP IMPROVEMENT
+        </h1>
+
+        <p class="site-subtitle mb-3">
+          Building Bridges to Close Gaps
+        </p>
+      </div>
+    </section>
+
+    <!-- Program tags (conceptual disciplines, not navigation) -->
+    <div class="program-bar" aria-label="Symposium themes">
+      <div class="program-bar__item program-bar__item--agronomy">
+        <span class="program-bar__label">Agronomy</span>
+      </div>
+      <div class="program-bar__item program-bar__item--genetics">
+        <span class="program-bar__label">Genetics</span>
+      </div>
+      <div class="program-bar__item program-bar__item--pathology">
+        <span class="program-bar__label">Plant Pathology</span>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <section class="hero" aria-label="Hero image">
+      <div class="container-fluid px-0">
+        <div class="hero-box">
+        </div>
+      </div>
+    </section>
+
+    <section class="home-series">
+      <div class="home-series__inner">
+        <p class="home-series__text">
+          Essential Overlaps for Crop Improvement is part of the Corteva Symposia Series, supporting interdisciplinary dialogue and innovation in agricultural sciences.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     Home — Block 2: Why attend (headline + 4 pillars)
+     Insert this inside your Home section
+     ========================================================= -->
+    <section class="home-why" aria-label="Why attend">
+      <div class="container-fluid px-3 px-md-4">
+        <!-- Short, centered statement -->
+        <p class="home-why__lead">
+          Genetics, Agronomy, and Plant Pathology generate powerful insights independently, but their real impact emerges at their intersections.
+        </p>
+
+        <!-- 4-pillar grid -->
+        <div class="why-grid">
+          <!-- Pillar 1 -->
+          <article class="why-card">
+            <h3 class="why-card__title">Integrated thinking</h3>
+            <p class="why-card__text">
+              We use genotype x environment x management (GxExM) as a shared framework to connect discovery, field performance, and decision-making.
+            </p>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="why-card">
+            <h3 class="why-card__title">Cross-sector dialogue</h3>
+            <p class="why-card__text">
+              Graduate students, faculty, industry scientists, and extension professionals engage in
+              conversations designed for synthesis, not parallel tracks.
+            </p>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="why-card">
+            <h3 class="why-card__title">Actionable science</h3>
+            <p class="why-card__text">
+              From genomics-to-phenotype pipelines to disease management and scalable phenotyping,
+              discussions stay oriented toward implementation.
+            </p>
+          </article>
+
+          <!-- Pillar 4 -->
+          <article class="why-card">
+            <h3 class="why-card__title">Designed for collaboration</h3>
+            <p class="why-card__text">
+              Workshops, posters, lightning talks, and panels are structured to create interactions
+              that can carry forward after the event.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-event">
+      <div class="home-event__inner">
+
+        <!-- Left column: Image -->
+        <div class="home-event__image">
+          <img src="assets/img/ksu.jpg" alt="Kansas State University campus">
+        </div>
+
+        <!-- Right column: Info -->
+        <div class="home-event__content">
+          <h2 class="home-event__title">Event Details</h2>
+
+          <ul class="home-event__list">
+            <li>
+              <strong>Dates:</strong> September 9–10, 2026
+            </li>
+            <li>
+              <strong>Location:</strong> Kansas State University Student Union, Manhattan, Kansas
+            </li>
+            <li>
+              <strong>Format:</strong> Two-day in-person event with livestream access
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="home-speakers">
+      <div class="home-speakers__inner">
+        <h2 class="home-speakers__title">Confirmed Speakers</h2>
+
+        <div class="home-speakers__grid">
+
+          <!-- Speaker card 1 -->
+          <article class="speaker-card">
+            <img class="speaker-card__photo" src="assets/img/person_icon.jpg" alt="Speaker placeholder">
+            <div class="speaker-card__name">Dr. ?</div>
+            <a class="speaker-card__link" href="#">More information</a>
+          </article>
+
+          <!-- Speaker card 2 -->
+          <article class="speaker-card">
+            <img class="speaker-card__photo" src="assets/img/person_icon.jpg" alt="Speaker placeholder">
+            <div class="speaker-card__name">Dr. ?</div>
+            <a class="speaker-card__link" href="#">More information</a>
+          </article>
+
+          <!-- Speaker card 3 -->
+          <article class="speaker-card">
+            <img class="speaker-card__photo" src="assets/img/person_icon.jpg" alt="Speaker placeholder">
+            <div class="speaker-card__name">Dr. ?</div>
+            <a class="speaker-card__link" href="#">More information</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="home-sponsors">
+      <div class="home-sponsors__inner">
+
+        <h2 class="home-sponsors__title">Sponsors</h2>
+
+        <!-- Row 1 (2 columns) -->
+        <div class="sponsors-row sponsors-row--2">
+          <div class="sponsor-cell">
+            <img src="assets/img/logo_corteva.png" alt="Corteva">
+          </div>
+          <div class="sponsor-cell"></div>
+        </div>
+
+        <!-- Row 2 (3 columns) -->
+        <div class="sponsors-row sponsors-row--3">
+          <div class="sponsor-cell"></div>
+          <div class="sponsor-cell"></div>
+          <div class="sponsor-cell"></div>
+        </div>
+
+        <!-- Row 3 (3 columns) -->
+        <div class="sponsors-row sponsors-row--3">
+          <div class="sponsor-cell"></div>
+          <div class="sponsor-cell"></div>
+          <div class="sponsor-cell"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+      <div class="container-fluid px-3 px-md-4">
+        <div class="text-muted small">© 2026 Kansas State University</div>
+      </div>
+    </footer>
+
+    <!-- Bottom accent bar -->
+    <div class="hero-accent" aria-hidden="true"></div>
+  </main>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
