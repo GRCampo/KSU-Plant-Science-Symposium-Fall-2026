@@ -1,11 +1,11 @@
-</nav><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Essential Overlaps for Crop Improvement</title>
+  <title>Speakers — Essential Overlaps for Crop Improvement</title>
 
   <!-- Bootstrap 5 (CDN) -->
   <link
@@ -13,11 +13,11 @@
     rel="stylesheet"
   />
 
-  <!-- Google Fonts: Titles (Cormorant SC) + Body (Lora) -->
+  <!-- Google Fonts: Cormorant SC (titles) + Montserrat (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
@@ -27,7 +27,7 @@
 
 <body id="top">
   <!-- =========================================================
-       Top header (not fixed)
+       Top header
        ========================================================= -->
   <header class="top-header">
     <div class="top-header__inner">
@@ -38,22 +38,42 @@
           class="ksu-logo"
         />
       </div>
+      <div class="top-header__divider" aria-hidden="true"></div>
+      <ul class="top-header__depts">
+        <li>Agronomy</li>
+        <li>Genetics</li>
+        <li>Plant Pathology</li>
+      </ul>
+      <a href="registration.html" class="top-header__reg-btn">Registration</a>
     </div>
   </header>
 
-  <!-- Accent bar (signature strip below the top header) -->
+  <!-- Accent bar -->
   <div class="hero-accent" aria-hidden="true"></div>
 
   <!-- =========================================================
-       Mobile navigation (only visible below lg)
+       Desktop navigation
+       ========================================================= -->
+  <nav class="desktop-nav d-none d-lg-flex" aria-label="Main navigation">
+    <div class="desktop-nav__inner">
+      <a class="desktop-nav__link" href="index.html">Home</a>
+      <a class="desktop-nav__link" href="program.html">Program</a>
+      <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
+      <a class="desktop-nav__link" href="committee.html">Organizing Committee</a>
+      <a class="desktop-nav__link" href="sponsors.html">Sponsors</a>
+      <a class="desktop-nav__link" href="travel.html">Travel &amp; Venue</a>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       Mobile navigation
        ========================================================= -->
   <nav class="navbar navbar-dark bg-dark d-lg-none mobile-nav" aria-label="Mobile navigation">
     <div class="container-fluid px-3">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
         <span class="mobile-logo" aria-hidden="true"></span>
         <span class="fs-6">Essential Overlaps</span>
       </a>
-
       <button
         class="navbar-toggler"
         type="button"
@@ -66,73 +86,165 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-
     <div class="collapse" id="mobileMenu">
       <div class="bg-dark px-3 pb-3">
-        <!-- Keep as placeholders; update when sections exist -->
-        <a class="mobile-link" href="#home">Home</a>
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="program.html">Program</a>
+        <a class="mobile-link" href="submissions.html">Abstract Submission</a>
+        <a class="mobile-link" href="committee.html">Organizing Committee</a>
+        <a class="mobile-link" href="sponsors.html">Sponsors</a>
+        <a class="mobile-link" href="travel.html">Travel &amp; Venue</a>
       </div>
     </div>
   </nav>
 
   <!-- =========================================================
-       Desktop sidebar (fixed, only visible at lg and above)
-       ========================================================= -->
-  <aside class="sidebar d-none d-lg-flex" aria-label="Sidebar navigation">
-    <div class="sidebar__inner">
-      <a class="logo-wrap" href="#top" aria-label="Back to top">
-        <div class="logo-circle">
-          <img
-            src="assets/img/logo2_4x.png"
-            alt="Essential Overlaps logo"
-            class="logo-img"
-          />
-        </div>
-      </a>
-
-      <nav class="side-nav" aria-label="Site pages">
-        <a class="side-link" href="index.html">Home</a>
-        <a class="side-link" href="about.html">About</a>
-        <a class="side-link is-active" href="speakers.html">Speakers</a>
-        <a class="side-link" href="program.html">Program</a>
-        <a class="side-link" href="registration.html">Registration</a>
-        <a class="side-link" href="submissions.html">Submissions</a>
-        <a class="side-link" href="travel.html">Travel</a>
-        <a class="side-link" href="committee.html">Committee and volunteer</a>
-        <a class="side-link" href="sponsors.html">Sponsors</a>
-        <a class="side-link" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </aside>
-
-  <!-- =========================================================
        Main content
        ========================================================= -->
-
   <main class="main">
-    <section class="title-row">
-        <div class="container-fluid px-3 px-md-4">
-        <h1 class="site-title mb-0">Speakers</h1>
-        </div>
+
+    <section class="speakers-page">
+      <div class="page-container">
+
+        <h1 class="speakers-page__title">Invited Speakers</h1>
+
+        <!-- ===================================================
+             Card 1 — Dr. John Kirkegaard
+             Discipline: Agronomy (green)
+             =================================================== -->
+        <article class="speaker-card speaker-card--agronomy" id="john-kirkegaard">
+          <div class="speaker-card__bar" aria-hidden="true"></div>
+
+          <div class="speaker-card__photo-wrap">
+            <img
+              src="assets/img/speaker_JK.png"
+              alt="Dr. John Kirkegaard"
+              class="speaker-card__img"
+            />
+          </div>
+
+          <div class="speaker-card__body">
+            <h2 class="speaker-card__name">Dr. John Kirkegaard</h2>
+            <p class="speaker-card__role">
+              Chief Research Scientist, CSIRO — Australia's National Science Agency<br>
+              Fulbright Distinguished Chair, Kansas State University
+            </p>
+            <p class="speaker-card__question">
+              How do we design farming systems that produce more with less — and share that knowledge across borders?
+            </p>
+            <p class="speaker-card__bio">
+              John Kirkegaard is a Fellow of the Australian Academy of Science whose research focuses on how cropping system design — sequences, timing, and variety choices — can improve water use efficiency in dryland agriculture. He received the Eureka Prize in Sustainable Agriculture in 2014. He is currently a Fulbright Distinguished Chair at Kansas State University, bringing an international perspective to wheat system productivity.
+            </p>
+            <div class="talk-block talk-block--tba">
+              <h3 class="talk-title talk-title--tba">To be announced</h3>
+            </div>
+            <p class="abstract-tba">Abstract will be announced soon.</p>
+          </div>
+        </article>
+
+        <!-- ===================================================
+             Card 2 — Dr. Xu "Kevin" Wang
+             Discipline: Genetics (blue)
+             =================================================== -->
+        <article class="speaker-card speaker-card--genetics" id="kevin-wang">
+          <div class="speaker-card__bar" aria-hidden="true"></div>
+
+          <div class="speaker-card__photo-wrap">
+            <img
+              src="assets/img/speaker_KW.png"
+              alt="Dr. Xu (Kevin) Wang"
+              class="speaker-card__img"
+            />
+          </div>
+
+          <div class="speaker-card__body">
+            <h2 class="speaker-card__name">Dr. Xu &#8220;Kevin&#8221; Wang</h2>
+            <p class="speaker-card__role">
+              Assistant Professor of Agricultural and Biological Engineering<br>
+              University of Florida — Gulf Coast Research and Education Center
+            </p>
+            <p class="speaker-card__question">
+              What happens when artificial intelligence learns to see plants the way a plant scientist does?
+            </p>
+            <p class="speaker-card__bio">
+              Kevin Wang's lab builds AI-powered machine vision systems and digital twin technologies that give breeders precise, scalable data on plant growth and performance. His work has supported wheat breeding programs across the US, Mexico, and India. Before joining the University of Florida, he was a senior research associate at the Applied Wheat Genomics Lab at Kansas State University.
+            </p>
+            <div class="talk-block talk-block--tba">
+              <h3 class="talk-title talk-title--tba">To be announced</h3>
+            </div>
+            <p class="abstract-tba">Abstract will be announced soon.</p>
+          </div>
+        </article>
+
+        <!-- ===================================================
+             Card 3 — Dr. Michael Kantar
+             Discipline: Agronomy (green)
+             =================================================== -->
+        <article class="speaker-card speaker-card--agronomy" id="michael-kantar">
+          <div class="speaker-card__bar" aria-hidden="true"></div>
+
+          <div class="speaker-card__photo-wrap">
+            <img
+              src="assets/img/speaker_MK.png"
+              alt="Dr. Michael Kantar"
+              class="speaker-card__img"
+            />
+          </div>
+
+          <div class="speaker-card__body">
+            <h2 class="speaker-card__name">Dr. Michael Kantar</h2>
+            <p class="speaker-card__role">
+              Professor, University of Hawai&#699;i at M&#257;noa
+            </p>
+            <p class="speaker-card__question">
+              If the next climate-ready crop trait already exists somewhere in nature, how do we find it before we need it?
+            </p>
+            <p class="speaker-card__bio">
+              Michael Kantar studies how wild plant relatives and historic crop diversity can be mobilized for modern breeding programs. His research sits at the intersection of genetics, ecology, and food systems — asking not just what genes exist, but whether the right ones are accessible when agriculture needs them most. He was a 2018 AAAS Leshner Leadership Institute Public Engagement Fellow.
+            </p>
+            <div class="talk-block">
+              <h3 class="talk-title">Germplasm collections: The search for the next key trait starts here</h3>
+            </div>
+            <details class="abstract-toggle">
+              <summary>
+                Read abstract <span class="toggle-arrow" aria-hidden="true">&#8595;</span>
+              </summary>
+              <p class="abstract-text">
+                Crop diversity is an essential resource for national and international breeding programs aimed at preparing global agriculture for a changing climate. There are related risks that need to be evaluated (1) does the genetic diversity needed for climate adaptation exist somewhere? And (2) is such genetic diversity accessible? Many different methods have been proposed to evaluate these risks including Focused Identification of Germplasm Strategy - FIGS, Core Collections, wild phylorelatives to determine crossing, and germplasm genomics with these methods achieving different levels of success. This talk will explore these methods and propose new methods of using germplasm collections to identify the most promising parents and to operationalize them for any potential species, geography or set of potential future environmental constraints.
+              </p>
+            </details>
+          </div>
+        </article>
+
+        <!-- ===================================================
+             Card 4 — Speaker TBA (Corteva)
+             Discipline: Plant Pathology (orange)
+             =================================================== -->
+        <article class="speaker-card speaker-card--pathology speaker-card--tba">
+          <div class="speaker-card__bar" aria-hidden="true"></div>
+
+          <div class="speaker-card__photo-wrap">
+            <img
+              src="assets/img/corteva.png"
+              alt="Speaker to be announced"
+              class="speaker-card__img speaker-card__img--placeholder"
+            />
+          </div>
+
+          <div class="speaker-card__body">
+            <h2 class="speaker-card__name">Speaker TBA</h2>
+            <p class="speaker-card__role">
+              Corteva Agriscience
+            </p>
+            <p class="speaker-card__bio speaker-card__bio--tba">
+              Speaker details will be announced soon.
+            </p>
+          </div>
+        </article>
+
+      </div>
     </section>
 
-    <section class="content-section under-construction">
-        <div class="container-fluid px-3 px-md-4">
-
-        <!-- GIF -->
-        <img 
-            src="assets/img/in_construction.gif" 
-            alt="Under construction" 
-            class="under-construction__gif"
-        >
-
-        <p class="under-construction__text">
-            This page is under construction. Content will be added soon.
-        </p>
-
-        </div>
-    </section>
-  
     <!-- Footer -->
     <footer class="py-4">
       <div class="container-fluid px-3 px-md-4">
@@ -146,5 +258,17 @@
 
   <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Rotate arrow on abstract toggle open/close
+    document.querySelectorAll('.abstract-toggle').forEach(function(details) {
+      details.addEventListener('toggle', function() {
+        var arrow = details.querySelector('.toggle-arrow');
+        if (arrow) {
+          arrow.style.transform = details.open ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

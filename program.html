@@ -1,11 +1,11 @@
-</nav><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Essential Overlaps for Crop Improvement</title>
+  <title>Program — Essential Overlaps for Crop Improvement</title>
 
   <!-- Bootstrap 5 (CDN) -->
   <link
@@ -27,7 +27,7 @@
 
 <body id="top">
   <!-- =========================================================
-       Top header (not fixed)
+       Top header
        ========================================================= -->
   <header class="top-header">
     <div class="top-header__inner">
@@ -38,22 +38,42 @@
           class="ksu-logo"
         />
       </div>
+      <div class="top-header__divider" aria-hidden="true"></div>
+      <ul class="top-header__depts">
+        <li>Agronomy</li>
+        <li>Genetics</li>
+        <li>Plant Pathology</li>
+      </ul>
+      <a href="registration.html" class="top-header__reg-btn">Registration</a>
     </div>
   </header>
 
-  <!-- Accent bar (signature strip below the top header) -->
+  <!-- Accent bar -->
   <div class="hero-accent" aria-hidden="true"></div>
 
   <!-- =========================================================
-       Mobile navigation (only visible below lg)
+       Desktop navigation
+       ========================================================= -->
+  <nav class="desktop-nav d-none d-lg-flex" aria-label="Main navigation">
+    <div class="desktop-nav__inner">
+      <a class="desktop-nav__link" href="index.html">Home</a>
+      <a class="desktop-nav__link" href="program.html">Program</a>
+      <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
+      <a class="desktop-nav__link" href="committee.html">Organizing Committee</a>
+      <a class="desktop-nav__link" href="sponsors.html">Sponsors</a>
+      <a class="desktop-nav__link" href="travel.html">Travel &amp; Venue</a>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       Mobile navigation
        ========================================================= -->
   <nav class="navbar navbar-dark bg-dark d-lg-none mobile-nav" aria-label="Mobile navigation">
     <div class="container-fluid px-3">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
         <span class="mobile-logo" aria-hidden="true"></span>
         <span class="fs-6">Essential Overlaps</span>
       </a>
-
       <button
         class="navbar-toggler"
         type="button"
@@ -66,73 +86,35 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-
     <div class="collapse" id="mobileMenu">
       <div class="bg-dark px-3 pb-3">
-        <!-- Keep as placeholders; update when sections exist -->
-        <a class="mobile-link" href="#home">Home</a>
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="program.html">Program</a>
+        <a class="mobile-link" href="submissions.html">Abstract Submission</a>
+        <a class="mobile-link" href="committee.html">Organizing Committee</a>
+        <a class="mobile-link" href="sponsors.html">Sponsors</a>
+        <a class="mobile-link" href="travel.html">Travel &amp; Venue</a>
       </div>
     </div>
   </nav>
 
   <!-- =========================================================
-       Desktop sidebar (fixed, only visible at lg and above)
-       ========================================================= -->
-  <aside class="sidebar d-none d-lg-flex" aria-label="Sidebar navigation">
-    <div class="sidebar__inner">
-      <a class="logo-wrap" href="#top" aria-label="Back to top">
-        <div class="logo-circle">
-          <img
-            src="assets/img/logo2_4x.png"
-            alt="Essential Overlaps logo"
-            class="logo-img"
-          />
-        </div>
-      </a>
-
-      <nav class="side-nav" aria-label="Site pages">
-        <a class="side-link" href="index.html">Home</a>
-        <a class="side-link" href="about.html">About</a>
-        <a class="side-link" href="speakers.html">Speakers</a>
-        <a class="side-link is-active" href="program.html">Program</a>
-        <a class="side-link" href="registration.html">Registration</a>
-        <a class="side-link" href="submissions.html">Submissions</a>
-        <a class="side-link" href="travel.html">Travel</a>
-        <a class="side-link" href="committee.html">Committee and volunteer</a>
-        <a class="side-link" href="sponsors.html">Sponsors</a>
-        <a class="side-link" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </aside>
-
-  <!-- =========================================================
        Main content
        ========================================================= -->
-
   <main class="main">
-    <section class="title-row">
-        <div class="container-fluid px-3 px-md-4">
-        <h1 class="site-title mb-0">Program</h1>
-        </div>
-    </section>
-
     <section class="content-section under-construction">
-        <div class="container-fluid px-3 px-md-4">
-
-        <!-- GIF -->
-        <img 
-            src="assets/img/in_construction.gif" 
-            alt="Under construction" 
-            class="under-construction__gif"
-        >
-
+      <div class="container-fluid px-3 px-md-4">
+        <img
+          src="assets/img/in_construction.gif"
+          alt="Under construction"
+          class="under-construction__gif"
+        />
         <p class="under-construction__text">
-            This page is under construction. Content will be added soon.
+          This page is under construction. Content will be added soon.
         </p>
-
-        </div>
+      </div>
     </section>
-  
+
     <!-- Footer -->
     <footer class="py-4">
       <div class="container-fluid px-3 px-md-4">
