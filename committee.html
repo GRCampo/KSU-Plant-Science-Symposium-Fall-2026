@@ -58,6 +58,7 @@
     <div class="desktop-nav__inner">
       <a class="desktop-nav__link" href="index.html">Home</a>
       <a class="desktop-nav__link" href="program.html">Program</a>
+      <a class="desktop-nav__link" href="speakers.html">Speakers</a>
       <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
       <a class="desktop-nav__link" href="committee.html" aria-current="page">Organizing Committee</a>
       <a class="desktop-nav__link" href="sponsors.html">Sponsors</a>
@@ -104,26 +105,20 @@
   <main class="main">
     <div class="committee-page">
 
-      <!-- Block 1: Group Photo -->
-      <section aria-label="Group photo">
-        <img
-          src="assets/img/photos/Group_photo_adj2.jpg"
-          alt="The organizing committee of Essential Overlaps for Crop Improvement"
-          class="comm-photo"
-        />
-        <div class="page-container">
-          <p class="comm-photo-caption">The organizing committee of Essential Overlaps for Crop Improvement.</p>
-        </div>
-      </section>
-
       <div class="page-container comm-content">
+
+        <!-- Block 1: Page Title -->
+        <section class="comm-page-title-section" aria-label="Page title">
+          <h1 class="comm-page-title">Organizing Committee</h1>
+          <div class="comm-title-stripe" aria-hidden="true"></div>
+        </section>
 
         <!-- Block 2: Faculty Advisor -->
         <section class="comm-advisor-section" aria-label="Faculty Advisor">
           <div class="comm-advisor-card">
             <div class="comm-advisor-card__photo-wrap">
               <img
-                src="assets/img/person_icon.jpg"
+                src="assets/img/photos/AaronKusmec.jpg"
                 alt="Dr. Aaron Kusmec"
                 class="comm-advisor-card__img"
               />
@@ -138,21 +133,42 @@
 
         <!-- Block 3: Organizing Chairs -->
         <section class="comm-chairs-section" aria-label="Organizing Chairs">
-          <h2 class="comm-section-title">Organizing Chairs</h2>
-          <div id="chairs-container">
+          <h2 class="comm-section-title">Chairs</h2>
+          <div id="chairs-container" class="comm-hcard-grid">
             <p class="comm-loading" aria-live="polite">Loading&hellip;</p>
           </div>
         </section>
 
-        <!-- Block 4: Volunteer Teams -->
-        <section aria-label="Volunteer Teams">
-          <h2 class="comm-section-title">Volunteer Teams</h2>
-          <div id="volunteers-container">
+        <!-- Block 4: Support -->
+        <section class="comm-support-section" aria-label="Support">
+          <h2 class="comm-section-title">Support</h2>
+          <div id="support-container" class="comm-hcard-grid">
+            <p class="comm-loading" aria-live="polite">Loading&hellip;</p>
+          </div>
+        </section>
+
+        <!-- Block 5: Volunteer Team -->
+        <section class="comm-vol-section" aria-label="Volunteer Team">
+          <h2 class="comm-section-title">Volunteer Team</h2>
+          <div id="volunteers-container" class="comm-vol-grid">
             <p class="comm-loading" aria-live="polite">Loading&hellip;</p>
           </div>
         </section>
 
       </div><!-- /.page-container.comm-content -->
+
+      <!-- Block 6: Group Photo (closing block) -->
+      <section aria-label="Group photo">
+        <img
+          src="assets/img/photos/Group_photo_adj2.jpg"
+          alt="The organizing committee of Essential Overlaps for Crop Improvement"
+          class="comm-photo"
+        />
+        <div class="page-container">
+          <p class="comm-photo-caption">The organizing committee of Essential Overlaps for Crop Improvement.</p>
+        </div>
+      </section>
+
     </div><!-- /.committee-page -->
 
     <!-- Footer -->
@@ -175,7 +191,7 @@
       // ── CSV parser ────────────────────────────────────────────
       function parseCSV(text) {
         const lines = text.split('\n');
-        const headers = lines[0].split(',').map(function (h) { return h.trim(); });
+        const headers = lines[0].split(',').map(function (h) { return h.trim().toLowerCase(); });
         return lines.slice(1)
           .map(function (line) {
             const values = line.split(',');
@@ -193,14 +209,20 @@
         return (p || '').replace(/\\/g, '/');
       }
 
-      function programClass(program) {
+      function programColor(program) {
         const p = (program || '').toLowerCase();
-        if (p.includes('agronomy'))  return 'agronomy';
-        if (p.includes('genetics'))  return 'genetics';
-        if (p.includes('pathology')) return 'pathology';
-        return '';
+        if (p.includes('agronomy'))  return '#7bb347';
+        if (p.includes('genetics'))  return '#25728c';
+        if (p.includes('pathology')) return '#d99541';
+        return '#9ca3af';
       }
 
+      function ensureHttps(url) {
+        if (!url) return url;
+        return url.startsWith('http') ? url : 'https://' + url;
+      }
+
+      // ── SVG icons ─────────────────────────────────────────────
       const LINKEDIN_ICON =
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
         '<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 ' +
@@ -209,88 +231,102 @@
         '13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 ' +
         '1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
 
-      const SCHOLAR_ICON =
+      const X_ICON =
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
-        '<path d="M12 3L1 9l4 2.18V15c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-3.82L21 9l-9-6zm6 12H6v-3.36' +
-        'l6 3.27 6-3.27V15zm-6-3.17L3.46 9 12 4.17 20.54 9 12 11.83z"/></svg>';
+        '<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835' +
+        'L2.2 2.25h6.953l4.259 5.629L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>';
 
-      function socialIconsHTML(linkedin, scholar) {
+      const GLOBE_ICON =
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+        '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85' +
+        '-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3' +
+        'c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8' +
+        ' 3.97-2.1 5.39z"/></svg>';
+
+      function socialIconsHTML(m) {
+        const color = programColor(m.program);
         const parts = [];
-        if (linkedin) {
+
+        if (m.linkedin_url) {
+          const url = ensureHttps(m.linkedin_url);
           parts.push(
-            '<a href="' + linkedin + '" target="_blank" rel="noopener noreferrer" ' +
-            'class="comm-social-icon" aria-label="LinkedIn">' + LINKEDIN_ICON + '</a>'
+            '<a href="' + url + '" target="_blank" rel="noopener noreferrer" ' +
+            'class="comm-social-icon" style="color:' + color + '" aria-label="LinkedIn">' +
+            LINKEDIN_ICON + '</a>'
           );
         }
-        if (scholar) {
-          parts.push(
-            '<a href="' + scholar + '" target="_blank" rel="noopener noreferrer" ' +
-            'class="comm-social-icon" aria-label="Google Scholar">' + SCHOLAR_ICON + '</a>'
-          );
+
+        if (m.extra_url && m.icon_extra) {
+          let icon = '';
+          let label = '';
+          if (m.icon_extra === 'X')        { icon = X_ICON;    label = 'X'; }
+          else if (m.icon_extra === 'Personal') { icon = GLOBE_ICON; label = 'Personal website'; }
+
+          if (icon) {
+            parts.push(
+              '<a href="' + m.extra_url + '" target="_blank" rel="noopener noreferrer" ' +
+              'class="comm-social-icon" style="color:' + color + '" aria-label="' + label + '">' +
+              icon + '</a>'
+            );
+          }
         }
+
         return parts.length
           ? '<div class="comm-social-icons">' + parts.join('') + '</div>'
           : '';
       }
 
-      // ── chair rendering ───────────────────────────────────────
-      const CHAIR_ORDER = [
-        'Lucas Alexandre Batista',
-        'Cesar Guareschi',
-        'Eduardo Melgar',
-        'Gabriela Romero Campos',
-        'Luiz Pradella'
-      ];
+      function committeeText(m) {
+        const c1 = (m.committee1 || '').trim();
+        const c2 = (m.committee2 || '').trim();
+        return c2 ? c1 + ' · ' + c2 : c1;
+      }
 
-      function chairCardHTML(m) {
-        const cls     = programClass(m.program);
-        const imgSrc  = fixPath(m.photo_path) || 'assets/img/person_icon.jpg';
+      // ── horizontal card (Chair / Support) ────────────────────
+      function hCardHTML(m) {
+        const imgSrc = fixPath(m.photo_path) || 'assets/img/person_icon.jpg';
         const isPlaceholder = imgSrc.includes('person_icon');
-        const imgClass = 'comm-chair-card__img' + (isPlaceholder ? ' comm-chair-card__img--placeholder' : '');
-        const icons   = socialIconsHTML(m.linkedin_url, m.googlescholar_url);
+        const imgClass = 'comm-hcard__img' + (isPlaceholder ? ' comm-hcard__img--placeholder' : '');
+
+        let roleText = m.program.trim();
+        if (m.work && m.work.trim()) {
+          roleText = m.work.trim() + ' in ' + roleText;
+        }
+
+        const committee = committeeText(m);
+        const committeeHTML = committee
+          ? '<div class="comm-hcard__committee">' + committee + '</div>'
+          : '';
+
+        const icons = socialIconsHTML(m);
 
         return (
-          '<article class="comm-chair-card comm-chair-card--' + cls + '">' +
-            '<div class="comm-chair-card__bar" aria-hidden="true"></div>' +
-            '<div class="comm-chair-card__photo-wrap">' +
+          '<article class="comm-hcard">' +
+            '<div class="comm-hcard__photo-wrap">' +
               '<img src="' + imgSrc + '" alt="' + m.name + '" class="' + imgClass + '" />' +
             '</div>' +
-            '<div class="comm-chair-card__body">' +
-              '<div class="comm-chair-card__name">' + m.name + '</div>' +
-              '<div class="comm-chair-card__program">' + m.program + '</div>' +
-              '<div class="comm-chair-card__committee">' +
-                '<span class="comm-committee-label">Committee:</span> ' + m.committee1 +
-              '</div>' +
+            '<div class="comm-hcard__body">' +
+              '<div class="comm-hcard__name">' + m.name + '</div>' +
+              '<div class="comm-hcard__role">' + roleText + '</div>' +
+              committeeHTML +
               icons +
             '</div>' +
           '</article>'
         );
       }
 
-      function renderChairs(chairs) {
-        const ordered = CHAIR_ORDER
-          .map(function (name) {
-            return chairs.find(function (c) { return c.name === name; });
-          })
-          .filter(Boolean);
-
-        document.getElementById('chairs-container').innerHTML =
-          ordered.length ? ordered.map(chairCardHTML).join('') : '';
-      }
-
-      // ── volunteer rendering ───────────────────────────────────
-      const VOL_COMMITTEE_ORDER = [
-        'Executive',
-        'Scientific',
-        'Outreach & Engagement',
-        'Budget & Expenses'
-      ];
-
+      // ── volunteer card (vertical) ─────────────────────────────
       function volCardHTML(m) {
-        const imgSrc  = fixPath(m.photo_path) || 'assets/img/person_icon.jpg';
+        const imgSrc = fixPath(m.photo_path) || 'assets/img/person_icon.jpg';
         const isPlaceholder = imgSrc.includes('person_icon');
         const imgClass = 'comm-vol-card__img' + (isPlaceholder ? ' comm-vol-card__img--placeholder' : '');
-        const icons   = socialIconsHTML(m.linkedin_url, m.googlescholar_url);
+
+        const committee = committeeText(m);
+        const committeeHTML = committee
+          ? '<div class="comm-vol-card__committee">' + committee + '</div>'
+          : '';
+
+        const icons = socialIconsHTML(m);
 
         return (
           '<article class="comm-vol-card">' +
@@ -298,29 +334,24 @@
               '<img src="' + imgSrc + '" alt="' + m.name + '" class="' + imgClass + '" />' +
             '</div>' +
             '<div class="comm-vol-card__name">' + m.name + '</div>' +
-            '<div class="comm-vol-card__program">' + m.program + '</div>' +
+            '<div class="comm-vol-card__program">' + m.program.trim() + '</div>' +
+            committeeHTML +
             icons +
           '</article>'
         );
       }
 
-      function renderVolunteers(volunteers) {
-        const html = VOL_COMMITTEE_ORDER.map(function (committee) {
-          const members = volunteers.filter(function (v) {
-            return v.committee1 === committee;
-          });
-          if (!members.length) return '';
-          return (
-            '<div class="comm-subsection">' +
-              '<h3 class="comm-subsection__title">' + committee + '</h3>' +
-              '<div class="comm-vol-grid">' +
-                members.map(volCardHTML).join('') +
-              '</div>' +
-            '</div>'
-          );
-        }).join('');
+      // ── render helpers ────────────────────────────────────────
+      function renderHCards(members, containerId) {
+        const el = document.getElementById(containerId);
+        if (!el) return;
+        el.innerHTML = members.length ? members.map(hCardHTML).join('') : '';
+      }
 
-        document.getElementById('volunteers-container').innerHTML = html;
+      function renderVolunteers(volunteers) {
+        const el = document.getElementById('volunteers-container');
+        if (!el) return;
+        el.innerHTML = volunteers.length ? volunteers.map(volCardHTML).join('') : '';
       }
 
       // ── bootstrap ─────────────────────────────────────────────
@@ -329,15 +360,20 @@
           .then(function (r) { return r.text(); })
           .then(function (text) {
             const members = parseCSV(text);
-            renderChairs(
-              members.filter(function (m) { return m.role.toLowerCase() === 'chair'; })
+            renderHCards(
+              members.filter(function (m) { return m.role.toLowerCase() === 'chair'; }),
+              'chairs-container'
+            );
+            renderHCards(
+              members.filter(function (m) { return m.role.toLowerCase() === 'support'; }),
+              'support-container'
             );
             renderVolunteers(
               members.filter(function (m) { return m.role.toLowerCase() === 'volunteer'; })
             );
           })
           .catch(function () {
-            ['chairs-container', 'volunteers-container'].forEach(function (id) {
+            ['chairs-container', 'support-container', 'volunteers-container'].forEach(function (id) {
               const el = document.getElementById(id);
               if (el) el.innerHTML = '<p class="comm-loading">Content unavailable.</p>';
             });

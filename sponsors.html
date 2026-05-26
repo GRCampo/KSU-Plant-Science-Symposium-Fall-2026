@@ -13,11 +13,11 @@
     rel="stylesheet"
   />
 
-  <!-- Google Fonts: Titles (Cormorant SC) + Body (Lora) -->
+  <!-- Google Fonts: Cormorant SC + Lora + Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
@@ -58,9 +58,10 @@
     <div class="desktop-nav__inner">
       <a class="desktop-nav__link" href="index.html">Home</a>
       <a class="desktop-nav__link" href="program.html">Program</a>
+      <a class="desktop-nav__link" href="speakers.html">Speakers</a>
       <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
       <a class="desktop-nav__link" href="committee.html">Organizing Committee</a>
-      <a class="desktop-nav__link" href="sponsors.html">Sponsors</a>
+      <a class="desktop-nav__link" href="sponsors.html" aria-current="page">Sponsors</a>
       <a class="desktop-nav__link" href="travel.html">Travel &amp; Venue</a>
     </div>
   </nav>
@@ -90,6 +91,7 @@
       <div class="bg-dark px-3 pb-3">
         <a class="mobile-link" href="index.html">Home</a>
         <a class="mobile-link" href="program.html">Program</a>
+        <a class="mobile-link" href="speakers.html">Speakers</a>
         <a class="mobile-link" href="submissions.html">Abstract Submission</a>
         <a class="mobile-link" href="committee.html">Organizing Committee</a>
         <a class="mobile-link" href="sponsors.html">Sponsors</a>
@@ -102,18 +104,68 @@
        Main content
        ========================================================= -->
   <main class="main">
-    <section class="content-section under-construction">
-      <div class="container-fluid px-3 px-md-4">
-        <img
-          src="assets/img/in_construction.gif"
-          alt="Under construction"
-          class="under-construction__gif"
-        />
-        <p class="under-construction__text">
-          This page is under construction. Content will be added soon.
-        </p>
+    <div class="sponsors-page">
+
+      <!-- Page Title -->
+      <div class="page-container">
+        <section class="comm-page-title-section" aria-label="Page title">
+          <h1 class="comm-page-title">Sponsors</h1>
+          <div class="comm-title-stripe" aria-hidden="true"></div>
+          <p class="sponsors-page__subtitle">
+            This symposium is free and open to all thanks to the support of our sponsors.
+          </p>
+        </section>
       </div>
-    </section>
+
+      <!-- Block 1: Presenting Sponsor -->
+      <div class="page-container">
+        <section class="sponsors-presenting" aria-label="Presenting Sponsor">
+          <p class="sponsors-tier-label">Presenting Sponsor</p>
+          <img
+            src="assets/img/corteva.png"
+            alt="Corteva Agriscience"
+            class="sponsors-presenting__logo"
+          />
+          <p class="sponsors-presenting__name">Corteva Agriscience</p>
+        </section>
+      </div>
+
+      <hr class="sponsors-divider" />
+
+      <!-- Block 2: Sponsorship Booklet Download -->
+      <div class="page-container">
+        <section class="sponsors-cta" aria-label="Sponsorship booklet">
+          <h2 class="sponsors-heading">Interested in Supporting the Symposium?</h2>
+          <p class="sponsors-cta__body">
+            We welcome sponsors of all sizes. Download our sponsorship booklet
+            to learn about available tiers, benefits, and how your organization
+            can be part of this event.
+          </p>
+          <a
+            href="assets/2026_Sponsor_Booklet_FINAL.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sponsors-cta__btn"
+          >Download Sponsorship Booklet</a>
+          <p class="sponsors-cta__contact">
+            For inquiries, contact us at
+            <a href="mailto:emelgar@ksu.edu" class="sponsors-cta__email">emelgar@ksu.edu</a>
+          </p>
+        </section>
+      </div>
+
+      <hr class="sponsors-divider" />
+
+      <!-- Block 3: Our Sponsors (placeholder) -->
+      <div class="page-container">
+        <section class="sponsors-grid-section" aria-label="Our Sponsors">
+          <h2 class="sponsors-heading">Our Sponsors</h2>
+          <!-- SPONSOR GRID: replace placeholder below -->
+          <p class="sponsors-placeholder">Additional sponsors will be announced soon.</p>
+        </section>
+      </div>
+
+    </div><!-- /.sponsors-page -->
 
     <!-- Footer -->
     <footer class="py-4">

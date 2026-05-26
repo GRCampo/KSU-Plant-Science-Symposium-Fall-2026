@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
@@ -58,6 +58,7 @@
     <div class="desktop-nav__inner">
       <a class="desktop-nav__link" href="index.html">Home</a>
       <a class="desktop-nav__link" href="program.html">Program</a>
+      <a class="desktop-nav__link" href="speakers.html">Speakers</a>
       <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
       <a class="desktop-nav__link" href="committee.html">Organizing Committee</a>
       <a class="desktop-nav__link" href="sponsors.html">Sponsors</a>
@@ -90,6 +91,7 @@
       <div class="bg-dark px-3 pb-3">
         <a class="mobile-link" href="index.html">Home</a>
         <a class="mobile-link" href="program.html">Program</a>
+        <a class="mobile-link" href="speakers.html">Speakers</a>
         <a class="mobile-link" href="submissions.html">Abstract Submission</a>
         <a class="mobile-link" href="committee.html">Organizing Committee</a>
         <a class="mobile-link" href="sponsors.html">Sponsors</a>
@@ -102,18 +104,187 @@
        Main content
        ========================================================= -->
   <main class="main">
-    <section class="content-section under-construction">
-      <div class="container-fluid px-3 px-md-4">
-        <img
-          src="assets/img/in_construction.gif"
-          alt="Under construction"
-          class="under-construction__gif"
-        />
-        <p class="under-construction__text">
-          This page is under construction. Content will be added soon.
-        </p>
-      </div>
-    </section>
+    <div class="sub-page">
+      <div class="page-container">
+
+        <!-- Page title -->
+        <section class="comm-page-title-section" aria-label="Page title">
+          <h1 class="comm-page-title">Abstract Submission</h1>
+          <div class="comm-title-stripe" aria-hidden="true"></div>
+          <p class="reg-page__subtitle">
+            Submit your poster abstract for the 2026 Essential Overlaps
+            for Crop Improvement Symposium.
+          </p>
+        </section>
+
+        <!-- Poster specs info box -->
+        <div class="sub-specs-box" role="note">
+          <strong>Suggested poster dimensions:</strong> 44.5″ &times; 44.5″
+        </div>
+
+        <!-- Submission form -->
+        <form id="sub-form" class="reg-form" novalidate>
+
+          <!-- ── Section 1: Poster Information ── -->
+          <div class="sub-section">
+            <h2 class="sub-section-heading">Poster Information</h2>
+            <div class="reg-field">
+              <label class="reg-label" for="posterTitle">
+                Poster Title <span class="reg-required" aria-hidden="true">*</span>
+              </label>
+              <input class="reg-input" type="text" id="posterTitle" name="posterTitle" required />
+              <span class="sub-helper">Recommended: 30 words or less</span>
+            </div>
+          </div>
+
+          <!-- ── Section 2: Authors & Affiliation ── -->
+          <div class="sub-section">
+            <h2 class="sub-section-heading">Authors &amp; Affiliation</h2>
+            <div class="reg-field">
+              <label class="reg-label" for="presentingAuthor">
+                Presenting Author Name <span class="reg-required" aria-hidden="true">*</span>
+              </label>
+              <input class="reg-input" type="text" id="presentingAuthor" name="presentingAuthor" required />
+            </div>
+            <div class="reg-field">
+              <label class="reg-label" for="coAuthors">Co-Authors</label>
+              <input class="reg-input" type="text" id="coAuthors" name="coAuthors" />
+              <span class="sub-helper">Separate multiple co-authors with commas</span>
+            </div>
+            <div class="reg-field">
+              <label class="reg-label" for="affiliation">
+                Affiliation <span class="reg-required" aria-hidden="true">*</span>
+              </label>
+              <input class="reg-input" type="text" id="affiliation" name="affiliation"
+                placeholder="University / Company / Institution, Department" required />
+            </div>
+          </div>
+
+          <!-- ── Section 3: Contact & Academic Status ── -->
+          <div class="sub-section">
+            <h2 class="sub-section-heading">Contact &amp; Academic Status</h2>
+            <div class="reg-field">
+              <label class="reg-label" for="email">
+                Email (Presenting Author) <span class="reg-required" aria-hidden="true">*</span>
+              </label>
+              <input class="reg-input" type="email" id="email" name="email"
+                placeholder="your@email.com" required />
+            </div>
+            <div class="reg-field">
+              <label class="reg-label" for="studentCategory">
+                Student Category <span class="reg-required" aria-hidden="true">*</span>
+              </label>
+              <select class="reg-select" id="studentCategory" name="studentCategory" required>
+                <option value="">Select</option>
+                <option>MSc Student</option>
+                <option>PhD Student</option>
+                <option>Postdoctoral Researcher</option>
+                <option>Undergraduate Student</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ── Section 4: Research Theme ── -->
+          <div class="sub-section">
+            <h2 class="sub-section-heading">Research Theme</h2>
+            <div class="reg-field">
+              <span class="reg-label" id="theme-label">
+                Select all categories that best fits your research
+                <span class="reg-required" aria-hidden="true">*</span>
+              </span>
+              <div class="sub-radio-grid" role="group" aria-labelledby="theme-label">
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Ecology" /> Ecology
+                </label>
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Soil Science" /> Soil Science
+                </label>
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Agronomy" /> Agronomy
+                </label>
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Genetics" /> Genetics
+                </label>
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Plant Pathology" /> Plant Pathology
+                </label>
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Plant Breeding" /> Plant Breeding
+                </label>
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Crop Physiology" /> Crop Physiology
+                </label>
+                <label class="sub-radio-item sub-radio-item--wide">
+                  <input type="checkbox" name="researchTheme" value="Agricultural Engineering / Precision Agriculture" />
+                  Agricultural Engineering / Precision Agriculture
+                </label>
+                <label class="sub-radio-item">
+                  <input type="checkbox" name="researchTheme" value="Other" id="theme-other-checkbox" /> Other
+                </label>
+              </div>
+              <input class="reg-input" type="text" id="researchThemeOther" name="researchThemeOther"
+                placeholder="Please specify your research theme"
+                style="display:none; margin-top:0.5rem;" />
+            </div>
+          </div>
+
+          <!-- ── Section 5: Abstract Content ── -->
+          <div class="sub-section">
+            <h2 class="sub-section-heading">Abstract Content</h2>
+            <div class="reg-field">
+              <label class="reg-label" for="abstract">
+                Abstract <span class="reg-required" aria-hidden="true">*</span>
+              </label>
+              <p class="sub-helper sub-helper--above">
+                Suggested structure: Background &middot; Objective &middot; Methods
+                &middot; Results &middot; Conclusions (max 300 words)
+              </p>
+              <textarea class="reg-textarea" id="abstract" name="abstract" rows="10" required></textarea>
+              <div class="sub-counter-row">
+                <span class="sub-counter" id="abstract-counter" aria-live="polite">0 / 300 words</span>
+                <span class="sub-error" id="abstract-error" style="display:none;" aria-live="assertive">
+                  Abstract exceeds the 300-word limit. Please shorten before submitting.
+                </span>
+              </div>
+            </div>
+            <div class="reg-field">
+              <label class="reg-label" for="keywords">
+                Keywords <span class="reg-required" aria-hidden="true">*</span>
+              </label>
+              <input class="reg-input" type="text" id="keywords" name="keywords" required />
+              <span class="sub-helper">Enter 3–5 keywords separated by commas</span>
+            </div>
+          </div>
+
+          <!-- ── Section 6: Consent ── -->
+          <div class="sub-section">
+            <h2 class="sub-section-heading">Consent</h2>
+            <div class="reg-field">
+              <label class="sub-consent-item">
+                <input type="checkbox" name="consentPresent" value="yes" />
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="reg-submit" id="sub-submit">Submit Abstract</button>
+
+        </form>
+
+        <!-- Success message (hidden until submit) -->
+        <div id="success-message" class="reg-success" style="display:none;" aria-live="polite">
+          <div class="reg-success__accent" aria-hidden="true"></div>
+          <h2 class="reg-success__title">Abstract submitted!</h2>
+          <p class="reg-success__body">
+            Thank you for your submission. We will review your abstract and
+            be in touch with further details about the 2026 Essential Overlaps
+            for Crop Improvement Symposium, September 9–10 at the K-State Student Union.
+          </p>
+        </div>
+
+      </div><!-- /.page-container -->
+    </div><!-- /.sub-page -->
 
     <!-- Footer -->
     <footer class="py-4">
@@ -128,5 +299,97 @@
 
   <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    (function () {
+
+      function countWords(str) {
+        return str.trim() === '' ? 0 : str.trim().split(/\s+/).length;
+      }
+
+      // ── Abstract word counter (block at > 300) ──
+      var abstractInput   = document.getElementById('abstract');
+      var abstractCounter = document.getElementById('abstract-counter');
+      var abstractError   = document.getElementById('abstract-error');
+      var submitBtn       = document.getElementById('sub-submit');
+
+      abstractInput.addEventListener('input', function () {
+        var n = countWords(this.value);
+        abstractCounter.textContent = n + ' / 300 words';
+        if (n > 300) {
+          abstractCounter.className = 'sub-counter sub-counter--error';
+          abstractError.style.display = 'block';
+          submitBtn.disabled = true;
+        } else if (n >= 270) {
+          abstractCounter.className = 'sub-counter sub-counter--warning';
+          abstractError.style.display = 'none';
+          submitBtn.disabled = false;
+        } else {
+          abstractCounter.className = 'sub-counter';
+          abstractError.style.display = 'none';
+          submitBtn.disabled = false;
+        }
+      });
+
+      // ── Research theme "Other" reveal ──
+      document.querySelectorAll('input[name="researchTheme"]').forEach(function (cb) {
+        cb.addEventListener('change', function () {
+          if (this.value !== 'Other') return;
+          var themeOther = document.getElementById('researchThemeOther');
+          themeOther.style.display = this.checked ? 'block' : 'none';
+          if (!this.checked) themeOther.value = '';
+        });
+      });
+
+      // ── Form submit → POST to Google Sheets, then show success ──
+      const SHEET_URL = "https://script.google.com/macros/s/AKfycbwaMAQRr2C4t_26x5gWB_6IDway_07PlRQsxEARC4DXOAZvbDwiY0IZRe1Ne_gM9yYxig/exec";
+
+      var form = document.getElementById('sub-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const checkedThemes = document.querySelectorAll('input[name="researchTheme"]:checked');
+        if (!checkedThemes.length) {
+          alert('Please select at least one research theme.');
+          return;
+        }
+
+        const payload = {
+          posterTitle:        document.getElementById('posterTitle').value,
+          presentingAuthor:   document.getElementById('presentingAuthor').value,
+          coAuthors:          document.getElementById('coAuthors').value || '',
+          affiliation:        document.getElementById('affiliation').value,
+          email:              document.getElementById('email').value,
+          studentCategory:    document.getElementById('studentCategory').value,
+          researchTheme:      Array.from(checkedThemes).map(cb => cb.value).join(', '),
+          researchThemeOther: document.getElementById('researchThemeOther')?.value || '',
+          abstract:           document.getElementById('abstract').value,
+          keywords:           document.getElementById('keywords').value
+        };
+
+        const submitBtn = form.querySelector("button[type='submit']");
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+
+        fetch(SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(function () {
+          form.style.display = 'none';
+          document.getElementById('success-message').style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Abstract';
+          alert('Something went wrong. Please try again or contact us at emelgar@ksu.edu');
+        });
+      });
+
+    })();
+  </script>
 </body>
 </html>
