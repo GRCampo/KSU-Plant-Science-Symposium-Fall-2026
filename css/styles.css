@@ -2031,3 +2031,104 @@ h1, h2, h3, h4, h5, h6,
     grid-column: 1;
   }
 }
+
+.workshop-list {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.7;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Registration — workshop selection section */
+.reg-section-separator {
+  height: 1px;
+  background: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.reg-section-title {
+  font-family: "Cormorant SC", serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #25728c;
+  margin: 0 0 0.35rem;
+}
+
+.reg-section-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.reg-workshop-session {
+  margin-bottom: 1.25rem;
+}
+
+.reg-workshop-session:last-child {
+  margin-bottom: 0;
+}
+
+.reg-attend-question {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  margin: 0.5rem 0 0.4rem;
+}
+
+.reg-attend-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.reg-radio-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.reg-radio-item input[type="radio"] {
+  accent-color: #25728c;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+
+.reg-workshop-options {
+  margin-top: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.reg-workshop-select-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.reg-workshop-link {
+  font-size: 0.78rem;
+  color: #25728c;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.reg-workshop-link:hover {
+  text-decoration: underline;
+}

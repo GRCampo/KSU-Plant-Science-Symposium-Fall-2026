@@ -59,6 +59,7 @@
       <a class="desktop-nav__link" href="index.html">Home</a>
       <a class="desktop-nav__link" href="program.html">Program</a>
       <a class="desktop-nav__link" href="speakers.html">Speakers</a>
+      <a class="desktop-nav__link" href="workshops.html">Workshops</a>
       <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
       <a class="desktop-nav__link" href="committee.html">Organizing Committee</a>
       <a class="desktop-nav__link" href="sponsors.html">Sponsors</a>
@@ -92,6 +93,7 @@
         <a class="mobile-link" href="index.html">Home</a>
         <a class="mobile-link" href="program.html">Program</a>
         <a class="mobile-link" href="speakers.html">Speakers</a>
+        <a class="mobile-link" href="workshops.html">Workshops</a>
         <a class="mobile-link" href="submissions.html">Abstract Submission</a>
         <a class="mobile-link" href="committee.html">Organizing Committee</a>
         <a class="mobile-link" href="sponsors.html">Sponsors</a>
@@ -173,25 +175,19 @@
             <span class="reg-label" id="reg-dietary-label">Dietary Restrictions</span>
             <div class="reg-checkbox-grid" role="group" aria-labelledby="reg-dietary-label">
               <label class="reg-checkbox-item">
-                <input type="checkbox" name="dietary" value="Gluten-free" /> Gluten-free
+                <input type="checkbox" name="dietary" value="Gluten-free" /> Gluten
               </label>
               <label class="reg-checkbox-item">
-                <input type="checkbox" name="dietary" value="Dairy-free" /> Dairy-free
+                <input type="checkbox" name="dietary" value="Dairy-free" /> Vegetarian
               </label>
               <label class="reg-checkbox-item">
-                <input type="checkbox" name="dietary" value="Vegetarian" /> Vegetarian
+                <input type="checkbox" name="dietary" value="Vegetarian" /> Dairy
               </label>
               <label class="reg-checkbox-item">
                 <input type="checkbox" name="dietary" value="Vegan" /> Vegan
               </label>
               <label class="reg-checkbox-item">
                 <input type="checkbox" name="dietary" value="Nut allergy" /> Nut allergy
-              </label>
-              <label class="reg-checkbox-item">
-                <input type="checkbox" name="dietary" value="Halal" /> Halal
-              </label>
-              <label class="reg-checkbox-item">
-                <input type="checkbox" name="dietary" value="Kosher" /> Kosher
               </label>
               <label class="reg-checkbox-item">
                 <input type="checkbox" id="reg-dietary-other-cb" name="dietary" value="Other" /> Other
@@ -207,6 +203,66 @@
             />
           </div>
 
+          <!-- Workshop Selection -->
+          <div class="reg-field">
+            <div class="reg-section-separator" aria-hidden="true"></div>
+            <h3 class="reg-section-title">Workshop Selection</h3>
+            <p class="reg-section-subtitle">Workshops are optional. Each session runs concurrently — you may attend one workshop per session.</p>
+
+            <!-- Session 1 -->
+            <div class="reg-workshop-session">
+              <span class="reg-label">Session 1</span>
+              <p class="reg-attend-question">Would you like to attend a Session 1 workshop?</p>
+              <div class="reg-attend-group" role="group" aria-label="Session 1 attendance">
+                <label class="reg-radio-item">
+                  <input type="radio" name="session1Attend" id="s1-yes" value="Yes" /> Yes
+                </label>
+                <label class="reg-radio-item">
+                  <input type="radio" name="session1Attend" id="s1-no" value="No" /> No
+                </label>
+              </div>
+              <div id="s1-options" class="reg-workshop-options" style="display:none;">
+                <p class="reg-workshop-select-label">Select your workshop:</p>
+                <label class="reg-radio-item">
+                  <input type="radio" name="session1Workshop" value="Applied Statistics in R" />
+                  Applied Statistics in R: From Data to Results
+                  <a href="workshops.html#workshop-ai" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
+                </label>
+                <label class="reg-radio-item">
+                  <input type="radio" name="session1Workshop" value="Analyzing Biological Processes Over Time" />
+                  Analyzing Biological Processes Over Time: From Field Observations to Decisions
+                  <a href="workshops.html#workshop-stats" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
+                </label>
+              </div>
+            </div>
+
+            <!-- Session 2 -->
+            <div class="reg-workshop-session">
+              <span class="reg-label">Session 2</span>
+              <p class="reg-attend-question">Would you like to attend a Session 2 workshop?</p>
+              <div class="reg-attend-group" role="group" aria-label="Session 2 attendance">
+                <label class="reg-radio-item">
+                  <input type="radio" name="session2Attend" id="s2-yes" value="Yes" /> Yes
+                </label>
+                <label class="reg-radio-item">
+                  <input type="radio" name="session2Attend" id="s2-no" value="No" /> No
+                </label>
+              </div>
+              <div id="s2-options" class="reg-workshop-options" style="display:none;">
+                <p class="reg-workshop-select-label">Select your workshop:</p>
+                <label class="reg-radio-item">
+                  <input type="radio" name="session2Workshop" value="Working Smarter with AI" />
+                  Working Smarter with AI: Practical Tools and Critical Thinking for Scientific Data Analysis
+                  <a href="workshops.html#workshop-bio" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
+                </label>
+                <label class="reg-radio-item">
+                  <input type="radio" name="session2Workshop" value="To Be Announced" />
+                  To Be Announced
+                </label>
+              </div>
+            </div>
+          </div>
+
           <!-- Row 6: Accessibility -->
           <div class="reg-field">
             <label class="reg-label" for="accommodations">Accessibility &amp; Special Accommodations</label>
@@ -217,15 +273,6 @@
               rows="3"
               placeholder="Please describe any accessibility needs or special accommodations you require."
             ></textarea>
-          </div>
-
-          <!-- Row 7: Session Selection (static) -->
-          <div class="reg-field">
-            <span class="reg-label">Session Selection</span>
-            <div class="reg-session-note" role="note">
-              Session details will be announced soon.
-              You will be able to update your selection after registration.
-            </div>
           </div>
 
           <!-- Submit -->
@@ -272,6 +319,32 @@
         if (!this.checked) otherInput.value = '';
       });
 
+      // Show/hide Session 1 workshop options
+      document.querySelectorAll('input[name="session1Attend"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          var opts = document.getElementById('s1-options');
+          if (this.value === 'Yes') {
+            opts.style.display = 'block';
+          } else {
+            opts.style.display = 'none';
+            document.querySelectorAll('input[name="session1Workshop"]').forEach(function (r) { r.checked = false; });
+          }
+        });
+      });
+
+      // Show/hide Session 2 workshop options
+      document.querySelectorAll('input[name="session2Attend"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          var opts = document.getElementById('s2-options');
+          if (this.value === 'Yes') {
+            opts.style.display = 'block';
+          } else {
+            opts.style.display = 'none';
+            document.querySelectorAll('input[name="session2Workshop"]').forEach(function (r) { r.checked = false; });
+          }
+        });
+      });
+
       // Form submit → POST to Google Sheets, then show success
       const form = document.getElementById('reg-form');
       form.addEventListener('submit', function (e) {
@@ -290,7 +363,11 @@
           jobStatus:           document.getElementById('jobStatus').value,
           dietaryRestrictions: dietary.join(', '),
           dietaryOther:        document.getElementById('dietaryOther').value || '',
-          accommodations:      document.getElementById('accommodations').value || ''
+          accommodations:      document.getElementById('accommodations').value || '',
+          session1Attend:      (document.querySelector('input[name="session1Attend"]:checked') || {value: ''}).value,
+          session1Workshop:    (document.querySelector('input[name="session1Workshop"]:checked') || {value: ''}).value,
+          session2Attend:      (document.querySelector('input[name="session2Attend"]:checked') || {value: ''}).value,
+          session2Workshop:    (document.querySelector('input[name="session2Workshop"]:checked') || {value: ''}).value
         };
 
         const submitBtn = form.querySelector("button[type='submit']");
