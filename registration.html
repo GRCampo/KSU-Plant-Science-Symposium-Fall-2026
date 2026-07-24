@@ -63,7 +63,6 @@
       <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
       <a class="desktop-nav__link" href="committee.html">Organizing Committee</a>
       <a class="desktop-nav__link" href="sponsors.html">Sponsors</a>
-      <a class="desktop-nav__link" href="travel.html">Travel &amp; Venue</a>
     </div>
   </nav>
 
@@ -97,7 +96,6 @@
         <a class="mobile-link" href="submissions.html">Abstract Submission</a>
         <a class="mobile-link" href="committee.html">Organizing Committee</a>
         <a class="mobile-link" href="sponsors.html">Sponsors</a>
-        <a class="mobile-link" href="travel.html">Travel &amp; Venue</a>
       </div>
     </div>
   </nav>
@@ -116,6 +114,7 @@
           <p class="reg-page__subtitle">
             Join us for the 2026 Essential Overlaps for Crop Improvement Symposium.
           </p>
+          <p class="reg-session-note">Spots are limited!</p>
         </section>
 
         <!-- Registration form -->
@@ -226,12 +225,12 @@
                 <label class="reg-radio-item">
                   <input type="radio" name="session1Workshop" value="Applied Statistics in R" />
                   Applied Statistics in R: From Data to Results
-                  <a href="workshops.html#workshop-ai" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
+                  <a href="workshops.html#workshop-stats" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
                 </label>
                 <label class="reg-radio-item">
                   <input type="radio" name="session1Workshop" value="Analyzing Biological Processes Over Time" />
                   Analyzing Biological Processes Over Time: From Field Observations to Decisions
-                  <a href="workshops.html#workshop-stats" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
+                  <a href="workshops.html#workshop-bio" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
                 </label>
               </div>
             </div>
@@ -253,11 +252,12 @@
                 <label class="reg-radio-item">
                   <input type="radio" name="session2Workshop" value="Working Smarter with AI" />
                   Working Smarter with AI: Practical Tools and Critical Thinking for Scientific Data Analysis
-                  <a href="workshops.html#workshop-bio" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
+                  <a href="workshops.html#workshop-ai" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
                 </label>
                 <label class="reg-radio-item">
-                  <input type="radio" name="session2Workshop" value="To Be Announced" />
-                  To Be Announced
+                  <input type="radio" name="session2Workshop" value="Turning Field and Lab Measurements into Clean Datasets" />
+                  Turning Field and Lab Measurements into Clean Datasets
+                  <a href="workshops.html#workshop-data" class="reg-workshop-link" target="_blank" rel="noopener noreferrer">View description ↗</a>
                 </label>
               </div>
             </div>
@@ -273,6 +273,14 @@
               rows="3"
               placeholder="Please describe any accessibility needs or special accommodations you require."
             ></textarea>
+          </div>
+
+          <!-- Image/Photo Consent -->
+          <div class="reg-field">
+            <label class="sub-consent-item">
+              <input type="checkbox" name="imageConsent" value="yes" />
+              I understand that photos and videos may be taken during the event and may be published on the symposium's website and social media.
+            </label>
           </div>
 
           <!-- Submit -->
@@ -367,7 +375,8 @@
           session1Attend:      (document.querySelector('input[name="session1Attend"]:checked') || {value: ''}).value,
           session1Workshop:    (document.querySelector('input[name="session1Workshop"]:checked') || {value: ''}).value,
           session2Attend:      (document.querySelector('input[name="session2Attend"]:checked') || {value: ''}).value,
-          session2Workshop:    (document.querySelector('input[name="session2Workshop"]:checked') || {value: ''}).value
+          session2Workshop:    (document.querySelector('input[name="session2Workshop"]:checked') || {value: ''}).value,
+          imageConsent:        document.querySelector('input[name="imageConsent"]').checked ? 'yes' : ''
         };
 
         const submitBtn = form.querySelector("button[type='submit']");

@@ -851,8 +851,101 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* =========================================================
+   Home — Workshops teaser
+   ========================================================= */
+
+.home-workshops{
+  padding: 30px 30px;
+  background: #FFFFFF;
+}
+
+.home-workshops__title{
+  margin: 0 0 16px 0;
+  font-family: "Cormorant SC", serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  letter-spacing: 0.5px;
+  color: #111827;
+}
+
+.home-workshops__intro{
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.3
+  color: var(--text);
+  text-align: center;
+  max-width: 1090px;
+  margin: 0 auto 32px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.25rem 1.75rem;
+}
+
+.home-workshops__columns{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+}
+
+.home-workshops__col-title{
+  font-family: "Cormorant SC", serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+  color: var(--text);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.home-workshops__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.home-workshops__list li{
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.home-workshops__list li:hover{
+  border-color: #25728c;
+  background: #f5f9fa;
+}
+
+.home-workshops__list a{
+  display: block;
+  text-align: center;
+  padding: 0.85rem 1.1rem;
+  font-family: "Lora", serif;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #25728c;
+  text-decoration: none;
+}
+
+.home-workshops__list a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width: 768px){
+  .home-workshops__columns{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* =========================================================
    Home — Sponsors
-   Structured grid with tiered rows
+   Compact single-row summary (full tiered showcase lives on sponsors.html)
    ========================================================= */
 
 .home-sponsors{
@@ -862,7 +955,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 .home-sponsors__title{
-  margin: 0 0 36px 0;
+  margin: 0 0 28px 0;
   font-family: "Cormorant SC", serif;
   font-weight: 700;
   font-size: 1.85rem;
@@ -870,29 +963,53 @@ h1, h2, h3, h4, h5, h6,
   color: #111827;
 }
 
-/* Logos row — flex, left-aligned, wraps naturally */
-.sponsors-logos{
+.home-sponsors__logos{
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  margin-bottom: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2.5rem;
 }
 
-/* Sponsor cell */
-.sponsor-cell{
+.home-sponsors__logo-cell{
   background: #FFFFFF;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 20px 28px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Image inside cell */
-.sponsor-cell img{
+.home-sponsors__logo-cell img{
   max-width: 100%;
-  max-height: 70px;
+  height: auto;
   object-fit: contain;
+  display: block;
+}
+
+.home-sponsors__logo-cell--platinum{
+  padding: 34px 55px;
+}
+
+.home-sponsors__logo-cell--platinum img{
+  max-height: 122px;
+}
+
+.home-sponsors__logo-cell--silver{
+  padding: 27px 40px;
+}
+
+.home-sponsors__logo-cell--silver img{
+  max-height: 95px;
+}
+
+.home-sponsors__logo-cell--bronze{
+  padding: 21px 30px;
+}
+
+.home-sponsors__logo-cell--bronze img{
+  max-height: 68px;
 }
 
 /* =========================================================
@@ -968,6 +1085,7 @@ h1, h2, h3, h4, h5, h6,
   .home-event,
   .home-why,
   .home-speakers,
+  .home-workshops,
   .home-sponsors,
   .home-series{
     padding-left: 0;
@@ -1590,15 +1708,6 @@ h1, h2, h3, h4, h5, h6,
   margin: 0;
 }
 
-/* Presenting Sponsor block */
-.sponsors-presenting {
-  text-align: center;
-  padding: 3rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .sponsors-tier-label {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
@@ -1607,21 +1716,6 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 1.2px;
   color: var(--muted);
   margin: 0 0 20px;
-}
-
-.sponsors-presenting__logo {
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.sponsors-presenting__name {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  color: var(--muted);
-  margin: 16px 0 0;
 }
 
 /* Booklet CTA block */
@@ -1699,6 +1793,102 @@ h1, h2, h3, h4, h5, h6,
   font-size: 0.9rem;
   color: var(--muted);
   margin: 0;
+}
+
+/* =========================================================
+   Sponsor tiers (shared — Sponsors page + Home page)
+   ========================================================= */
+
+.sponsor-tiers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+.sponsor-tier {
+  width: 100%;
+  text-align: center;
+}
+
+.sponsor-tier__logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.sponsor-tier__cell {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-tier__cell img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.sponsor-tier--platinum .sponsor-tier__cell {
+  padding: 40px 56px;
+}
+
+.sponsor-tier--platinum .sponsor-tier__cell img {
+  max-height: 160px;
+}
+
+.sponsor-tier--silver .sponsor-tier__cell {
+  padding: 32px 44px;
+}
+
+.sponsor-tier--silver .sponsor-tier__cell img {
+  max-height: 120px;
+}
+
+.sponsor-tier--bronze .sponsor-tier__cell {
+  padding: 24px 32px;
+}
+
+.sponsor-tier--bronze .sponsor-tier__cell img {
+  max-height: 90px;
+}
+
+/* Sponsors page — no inner heading above the tiers, so skip the extra top margin
+   (the section's own padding already provides top spacing) */
+.sponsors-page .sponsor-tiers {
+  margin-top: 0;
+}
+
+/* Sponsors page — boxes sized 50% larger than the shared home-page defaults */
+.sponsors-page .sponsor-tier--platinum .sponsor-tier__cell {
+  padding: 60px 84px;
+}
+
+.sponsors-page .sponsor-tier--platinum .sponsor-tier__cell img {
+  max-height: 240px;
+}
+
+.sponsors-page .sponsor-tier--silver .sponsor-tier__cell {
+  padding: 48px 66px;
+}
+
+.sponsors-page .sponsor-tier--silver .sponsor-tier__cell img {
+  max-height: 180px;
+}
+
+.sponsors-page .sponsor-tier--bronze .sponsor-tier__cell {
+  padding: 36px 48px;
+}
+
+.sponsors-page .sponsor-tier--bronze .sponsor-tier__cell img {
+  max-height: 135px;
 }
 
 /* =========================================================
@@ -1821,14 +2011,15 @@ h1, h2, h3, h4, h5, h6,
 /* Session note info box */
 .reg-session-note {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 2pt);
   font-style: italic;
+  font-weight: 700;
   color: var(--muted);
   background: #f5f5f5;
-  border-left: 3px solid #7bb347;
   padding: 0.75rem 1rem;
-  border-radius: 0 4px 4px 0;
+  border-radius: 4px;
   line-height: 1.6;
+  margin-top: 1.25rem;
 }
 
 /* Submit button */
