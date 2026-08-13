@@ -2078,6 +2078,30 @@ h1, h2, h3, h4, h5, h6,
   padding-bottom: 80px;
 }
 
+/* Submission deadline notice */
+.sub-deadline {
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.sub-deadline__label {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sub-deadline__date {
+  display: block;
+  font-family: "Cormorant SC", serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #d99541;
+}
+
 /* Specs info box */
 .sub-specs-box {
   max-width: 680px;
