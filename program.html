@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Program — Essential Overlaps for Crop Improvement</title>
+  <title>Schedule — Essential Overlaps for Crop Improvement</title>
 
   <!-- Bootstrap 5 (CDN) -->
   <link
@@ -13,16 +13,244 @@
     rel="stylesheet"
   />
 
-  <!-- Google Fonts: Titles (Cormorant SC) + Body (Lora) -->
+  <!-- Google Fonts: Titles (Cormorant SC) + Body (Lora / Montserrat) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
   <!-- Project CSS -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    .prog-page { padding-bottom: 4rem; }
+
+    .prog-intro {
+      max-width: 860px;
+      margin: 0 auto 1rem;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .prog-intro strong { color: #111827; }
+
+    .prog-note {
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      background: #f5f5f5;
+      border-left: 3px solid #25728c;
+      padding: 0.75rem 1rem;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Day tabs */
+    .prog-day-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0 auto 3rem;
+      flex-wrap: wrap;
+    }
+
+    .prog-day-tab {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: var(--top-header-bg);
+      background: #fff;
+      border: 1.5px solid var(--top-header-bg);
+      border-radius: 999px;
+      padding: 0.6rem 1.6rem;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .prog-day-tab:hover { background: rgba(81, 40, 136, 0.08); }
+
+    .prog-day-tab.is-active {
+      background: var(--top-header-bg);
+      color: #fff;
+    }
+
+    /* Day section */
+    .prog-day { display: none; max-width: 980px; margin: 0 auto; }
+    .prog-day.is-active { display: block; }
+
+    .prog-day__heading {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 2.8vw, 2rem);
+      letter-spacing: -0.01em;
+      color: #111827;
+      margin: 0 0 0.25rem;
+      text-align: center;
+    }
+
+    .prog-day__date {
+      display: block;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #25728c;
+      margin: 0 0 2.5rem;
+    }
+
+    /* Timeline */
+    .prog-timeline {
+      position: relative;
+      padding-left: 0;
+    }
+
+    .prog-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 1.5rem;
+      padding: 1.1rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .prog-item:first-child { border-top: none; }
+
+    .prog-item__time {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #111827;
+      padding-top: 0.15rem;
+    }
+
+    .prog-item__content { min-width: 0; }
+
+    .prog-badge {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--top-header-bg);
+      background: #EDE7F6;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin: 0 0 0.5rem;
+    }
+
+    .prog-item__title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+      color: #374151;
+      margin: 0 0 0.35rem;
+      line-height: 1.4;
+    }
+
+    .prog-item__subtitle {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0 0 0.35rem;
+    }
+
+    .prog-item__desc {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.96rem;
+      line-height: 1.65;
+      color: #374151;
+      margin: 0 0 0.4rem;
+    }
+
+    .prog-item__meta {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .prog-item__meta strong { color: #374151; font-weight: 600; }
+
+    .prog-item__meta a {
+      color: var(--top-header-bg);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(81, 40, 136, 0.35);
+    }
+
+    .prog-item__meta a:hover { border-bottom-color: var(--top-header-bg); }
+
+    /* Break / lunch / registration rows: lighter weight, no badge pill */
+    .prog-item--muted .prog-item__title { font-size: 1.05rem; color: #4B5563; font-style: italic; font-family: "Montserrat", sans-serif; font-weight: 600; }
+    .prog-item--muted { opacity: 0.85; }
+
+    /* Parallel workshop tracks */
+    .prog-parallel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .prog-track {
+      background: var(--sidebar-bg);
+      border-left: 3px solid var(--top-header-bg);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.1rem;
+    }
+
+    .prog-track__label {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--top-header-bg);
+      margin-bottom: 0.3rem;
+    }
+
+    .prog-track__title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #111827;
+      margin: 0 0 0.4rem;
+      line-height: 1.4;
+    }
+
+    .prog-track__title a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(81, 40, 136, 0.35);
+    }
+
+    .prog-track__title a:hover { border-bottom-color: var(--top-header-bg); color: var(--top-header-bg); }
+
+    .prog-track__meta {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .prog-item { grid-template-columns: 1fr; gap: 0.4rem; }
+      .prog-item__time { padding-top: 0; }
+      .prog-parallel { grid-template-columns: 1fr; }
+    }
+
+  </style>
 </head>
 
 <body id="top">
@@ -57,7 +285,7 @@
   <nav class="desktop-nav d-none d-lg-flex" aria-label="Main navigation">
     <div class="desktop-nav__inner">
       <a class="desktop-nav__link" href="index.html">Home</a>
-      <a class="desktop-nav__link" href="program.html">Program</a>
+      <a class="desktop-nav__link" href="program.html" aria-current="page">Schedule</a>
       <a class="desktop-nav__link" href="speakers.html">Speakers</a>
       <a class="desktop-nav__link" href="workshops.html">Workshops</a>
       <a class="desktop-nav__link" href="submissions.html">Abstract Submission</a>
@@ -90,7 +318,7 @@
     <div class="collapse" id="mobileMenu">
       <div class="bg-dark px-3 pb-3">
         <a class="mobile-link" href="index.html">Home</a>
-        <a class="mobile-link" href="program.html">Program</a>
+        <a class="mobile-link" href="program.html">Schedule</a>
         <a class="mobile-link" href="speakers.html">Speakers</a>
         <a class="mobile-link" href="workshops.html">Workshops</a>
         <a class="mobile-link" href="submissions.html">Abstract Submission</a>
@@ -104,18 +332,234 @@
        Main content
        ========================================================= -->
   <main class="main">
-    <section class="content-section under-construction">
-      <div class="container-fluid px-3 px-md-4">
-        <img
-          src="assets/img/in_construction.gif"
-          alt="Under construction"
-          class="under-construction__gif"
-        />
-        <p class="under-construction__text">
-          This page is under construction. Content will be added soon.
+    <div class="prog-page">
+      <div class="page-container comm-content">
+
+        <!-- Page Title -->
+        <section class="comm-page-title-section" aria-label="Page title">
+          <h1 class="comm-page-title">Schedule</h1>
+          <div class="comm-title-stripe" aria-hidden="true"></div>
+        </section>
+
+        <p class="prog-intro">
+          <strong>September 9–10, 2026</strong> · K-State Student Union, Kansas State University<br />
+          Day 1 brings hands-on workshops; Day 2 features keynote talks from invited speakers, a poster session, and a panel discussion.
         </p>
-      </div>
-    </section>
+
+        <!-- Day tabs -->
+        <div class="prog-day-tabs" role="tablist" aria-label="Select program day">
+          <button type="button" class="prog-day-tab is-active" data-day="day1" role="tab" aria-selected="true">Day 1 · September 9</button>
+          <button type="button" class="prog-day-tab" data-day="day2" role="tab" aria-selected="false">Day 2 · September 10</button>
+        </div>
+
+        <!-- ===================== DAY 1 ===================== -->
+        <section class="prog-day is-active" id="day1" aria-label="Day 1 schedule">
+          <h2 class="prog-day__heading">Day 1</h2>
+          <span class="prog-day__date">Wednesday, September 9</span>
+
+          <div class="prog-timeline">
+
+            <div class="prog-item">
+              <div class="prog-item__time">1:00 – 1:15 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Opening</span>
+                <h3 class="prog-item__title">Welcome &amp; Opening Remarks</h3>
+                <p class="prog-item__desc">Words from the Scientific Committee and Corteva sponsors.</p>
+                <p class="prog-item__meta"><strong>Room:</strong> Flinthills Room (Room 228), K-State Student Union</p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">1:15 – 2:45 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Workshops · Section 1</span>
+                <h3 class="prog-item__subtitle">Sessions run at the same time</h3>
+                <div class="prog-parallel">
+                  <div class="prog-track">
+                    <span class="prog-track__label">A</span>
+                    <p class="prog-track__title"><a href="workshops.html#workshop-stats">Applied Statistics in R: From Data to Results</a></p>
+                    <p class="prog-track__meta">Gustavo Roa · Flinthills Room (Room 228)</p>
+                  </div>
+                  <div class="prog-track">
+                    <span class="prog-track__label">D</span>
+                    <p class="prog-track__title"><a href="workshops.html#workshop-data">Turning Field and Lab Measurements into Clean Datasets</a></p>
+                    <p class="prog-track__meta">Jazmin Gastaldi &amp; Jorge Romero · K-State Student Union, Room 206</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-item prog-item--muted">
+              <div class="prog-item__time">2:45 – 3:15 PM</div>
+              <div class="prog-item__content">
+                <h3 class="prog-item__title">Coffee Break</h3>
+                <p class="prog-item__desc">Networking &amp; refreshments.</p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">3:15 – 4:45 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Workshops · Section 2</span>
+                <h3 class="prog-item__subtitle">Sessions run at the same time</h3>
+                <div class="prog-parallel">
+                  <div class="prog-track">
+                    <span class="prog-track__label">C</span>
+                    <p class="prog-track__title"><a href="workshops.html#workshop-ai">Working Smarter with AI: Practical Tools and Critical Thinking for Scientific Data Analysis</a></p>
+                    <p class="prog-track__meta">Gabriela Romero Campos · Flinthills Room (Room 228)</p>
+                  </div>
+                  <div class="prog-track">
+                    <span class="prog-track__label">B</span>
+                    <p class="prog-track__title"><a href="workshops.html#workshop-bio">Analyzing Biological Processes Over Time: From Field Observations to Decisions</a></p>
+                    <p class="prog-track__meta">Claudio Dias da Silva Jr · K-State Student Union, Room 206</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">4:45 – 5:00 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Closing</span>
+                <h3 class="prog-item__title">Closing Remarks – Day 1</h3>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ===================== DAY 2 ===================== -->
+        <section class="prog-day" id="day2" aria-label="Day 2 schedule">
+          <h2 class="prog-day__heading">Day 2</h2>
+          <span class="prog-day__date">Thursday, September 10</span>
+
+          <div class="prog-timeline">
+
+            <div class="prog-item prog-item--muted">
+              <div class="prog-item__time">8:00 – 8:30 AM</div>
+              <div class="prog-item__content">
+                <h3 class="prog-item__title">Registration &amp; Check-in</h3>
+                <p class="prog-item__meta"><strong>Room:</strong> K-State Student Union, Main Ballroom</p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">8:30 – 8:45 AM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Opening</span>
+                <h3 class="prog-item__title">Welcome &amp; Introduction</h3>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">8:45 – 9:45 AM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">1st Keynote</span>
+                <h3 class="prog-item__title">Germplasm Collections: The Search for the Next Key Trait Starts Here</h3>
+                <p class="prog-item__meta"><strong>Speaker:</strong> <a href="speakers.html#michael-kantar">Dr. Michael Kantar</a></p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">9:45 – 10:45 AM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">2nd Keynote</span>
+                <h3 class="prog-item__title">Advancing Plant Phenomics with AI: Progress, Challenges, and Opportunities</h3>
+                <p class="prog-item__meta"><strong>Speaker:</strong> <a href="speakers.html#kevin-wang">Dr. Xu &ldquo;Kevin&rdquo; Wang</a></p>
+              </div>
+            </div>
+
+            <div class="prog-item prog-item--muted">
+              <div class="prog-item__time">10:45 – 11:00 AM</div>
+              <div class="prog-item__content">
+                <h3 class="prog-item__title">Coffee Break</h3>
+                <p class="prog-item__desc">Networking &amp; refreshments.</p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">11:00 AM – 12:00 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">3rd Keynote</span>
+                <h3 class="prog-item__title">From Gene Discovery to Trait Development: Deploying Genome Editing for Multi-Disease Resistance in Maize</h3>
+                <p class="prog-item__meta"><strong>Speaker:</strong> <a href="speakers.html#bailin-li">Dr. Bailin Li</a></p>
+              </div>
+            </div>
+
+            <div class="prog-item prog-item--muted">
+              <div class="prog-item__time">12:00 – 12:45 PM</div>
+              <div class="prog-item__content">
+                <h3 class="prog-item__title">Lunch</h3>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">12:45 – 1:45 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Poster Session</span>
+                <h3 class="prog-item__title">Poster Presentations &amp; Networking</h3>
+                <p class="prog-item__meta"><strong>Presenters:</strong> Graduate Students</p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">1:45 – 2:45 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">4th Keynote</span>
+                <h3 class="prog-item__title">Breeding for Systems Resilience: G×E×M Approaches to Productivity Improvements</h3>
+                <p class="prog-item__meta"><strong>Speaker:</strong> <a href="speakers.html#john-kirkegaard">Dr. John Kirkegaard</a></p>
+              </div>
+            </div>
+
+            <div class="prog-item prog-item--muted">
+              <div class="prog-item__time">2:45 – 3:00 PM</div>
+              <div class="prog-item__content">
+                <h3 class="prog-item__title">Coffee Break</h3>
+                <p class="prog-item__desc">Networking &amp; refreshments.</p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">3:00 – 4:00 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">5th Keynote</span>
+                <h3 class="prog-item__title">AI Advances — and what they may mean for Agriculture</h3>
+                <p class="prog-item__meta"><strong>Speaker:</strong> <a href="speakers.html#pascal-hitzler">Dr. Pascal Hitzler</a></p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">4:00 – 5:00 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Panel Discussion</span>
+                <h3 class="prog-item__title">Bridging Disciplines for Crop Improvement</h3>
+                <p class="prog-item__meta"><strong>With:</strong> Invited Speakers</p>
+              </div>
+            </div>
+
+            <div class="prog-item">
+              <div class="prog-item__time">5:00 – 5:30 PM</div>
+              <div class="prog-item__content">
+                <span class="prog-badge">Closing</span>
+                <h3 class="prog-item__title">Closing Remarks</h3>
+                <p class="prog-item__meta"><strong>Speakers:</strong> Scientific Committee</p>
+              </div>
+            </div>
+
+            <div class="prog-item prog-item--muted">
+              <div class="prog-item__time">5:30 – 6:30 PM</div>
+              <div class="prog-item__content">
+                <h3 class="prog-item__title">Closing Banquet</h3>
+                <p class="prog-item__desc">Closing Banquet &amp; Networking.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </div><!-- /.page-container -->
+    </div><!-- /.prog-page -->
 
     <!-- Footer -->
     <footer class="py-4">
@@ -130,5 +574,23 @@
 
   <!-- Bootstrap JS bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Day tab switcher -->
+  <script>
+    document.querySelectorAll('.prog-day-tab').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.prog-day-tab').forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.prog-day').forEach(function (d) {
+          d.classList.remove('is-active');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById(btn.dataset.day).classList.add('is-active');
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1812,6 +1812,33 @@ h1, h2, h3, h4, h5, h6,
   text-align: center;
 }
 
+.sponsor-tier__label {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  margin: 0 0 1.25rem;
+}
+
+.sponsor-tier--platinum .sponsor-tier__label {
+  color: var(--top-header-bg);
+  background: rgba(81, 40, 136, 0.1);
+}
+
+.sponsor-tier--silver .sponsor-tier__label {
+  color: #5B6472;
+  background: #E7E9EC;
+}
+
+.sponsor-tier--bronze .sponsor-tier__label {
+  color: #9A5B23;
+  background: #F5E4D2;
+}
+
 .sponsor-tier__logos {
   display: flex;
   flex-wrap: wrap;
