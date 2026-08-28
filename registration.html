@@ -104,6 +104,8 @@
        Main content
        ========================================================= -->
   <main class="main">
+    <div class="frost-wrap">
+      <div class="frost-content" inert>
     <div class="reg-page">
       <div class="page-container">
 
@@ -301,6 +303,17 @@
 
       </div><!-- /.page-container -->
     </div><!-- /.reg-page -->
+      </div><!-- /.frost-content -->
+
+      <div class="frost-card" role="dialog" aria-modal="false" aria-labelledby="frost-title">
+        <p class="frost-card__title" id="frost-title">Registration is closed</p>
+        <p class="frost-card__body">
+          Registration for the symposium is now closed. If you still wish to attend,
+          please email <a href="mailto:grcampos@ksu.edu">grcampos@ksu.edu</a> and we will do our best
+          to accommodate you.
+        </p>
+      </div>
+    </div><!-- /.frost-wrap -->
 
     <!-- Footer -->
     <footer class="py-4">
@@ -318,6 +331,9 @@
 
   <script>
     (function () {
+      const CLOSED = true;
+      if (CLOSED) return;
+
       const SHEET_URL = "https://script.google.com/macros/s/AKfycbxOw2Z5-YFxaNnWRQr7DJ_EoxZDH3lun2arxRViqOzG2kr2M9xfCS4LMt7860J18d0wtQ/exec";
 
       // Show/hide "Other" dietary text input

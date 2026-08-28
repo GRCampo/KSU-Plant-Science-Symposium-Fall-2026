@@ -104,6 +104,8 @@
        Main content
        ========================================================= -->
   <main class="main">
+    <div class="frost-wrap">
+      <div class="frost-content" inert>
     <div class="sub-page">
       <div class="page-container">
 
@@ -281,6 +283,17 @@
 
       </div><!-- /.page-container -->
     </div><!-- /.sub-page -->
+      </div><!-- /.frost-content -->
+
+      <div class="frost-card frost-card--amber" role="dialog" aria-modal="false" aria-labelledby="frost-title">
+        <p class="frost-card__title" id="frost-title">Abstract submission is closed</p>
+        <p class="frost-card__body">
+          Abstract submission is now closed. If you still wish to present,
+          please email <a href="mailto:pradella@ksu.edu">pradella@ksu.edu</a> and we will do our
+          best to accommodate you.
+        </p>
+      </div>
+    </div><!-- /.frost-wrap -->
 
     <!-- Footer -->
     <footer class="py-4">
@@ -298,6 +311,8 @@
 
   <script>
     (function () {
+      const CLOSED = true;
+      if (CLOSED) return;
 
       function countWords(str) {
         return str.trim() === '' ? 0 : str.trim().split(/\s+/).length;
