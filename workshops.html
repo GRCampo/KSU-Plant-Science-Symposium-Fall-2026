@@ -149,9 +149,16 @@
 
     .wksp-card__photos {
       display: flex;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
       justify-content: center;
-      margin-bottom: 0.5rem;
+    }
+
+    .wksp-instructor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .wksp-card__photo {
@@ -159,15 +166,16 @@
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center 20%;
       display: block;
     }
 
-    .wksp-card__instructor-text {
+    .wksp-instructor__name {
       font-family: "Montserrat", sans-serif;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-style: italic;
-      margin: 0 0 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 0.5rem 0 0.4rem;
     }
 
     .wksp-card__social {
@@ -181,8 +189,6 @@
       align-items: center;
       width: 20px;
       height: 20px;
-      color: #ccc;
-      pointer-events: none;
     }
 
     .wksp-card__social-link svg {
@@ -437,16 +443,18 @@
             </div>
             <div class="wksp-card__info">
               <div class="wksp-card__photos">
-                <img src="assets/img/person_icon.jpg" alt="" class="wksp-card__photo" />
-              </div>
-              <p class="wksp-card__instructor-text">Instructor details coming soon.</p>
-              <div class="wksp-card__social">
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                </a>
+                <div class="wksp-instructor">
+                  <img src="assets/img/photos/Gustavo_1.JPG" alt="Gustavo Roa Acosta" class="wksp-card__photo" />
+                  <p class="wksp-instructor__name">Gustavo Roa Acosta</p>
+                  <div class="wksp-card__social">
+                    <a href="https://www.linkedin.com/in/g-roa/" target="_blank" rel="noopener noreferrer" class="wksp-card__social-link" style="color:#7bb347" aria-label="LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://linktr.ee/gustavoroa" target="_blank" rel="noopener noreferrer" class="wksp-card__social-link" style="color:#7bb347" aria-label="Personal website">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
@@ -463,17 +471,14 @@
             </div>
             <div class="wksp-card__info">
               <div class="wksp-card__photos">
-                <img src="assets/img/person_icon.jpg" alt="" class="wksp-card__photo" />
-                <img src="assets/img/person_icon.jpg" alt="" class="wksp-card__photo" />
-              </div>
-              <p class="wksp-card__instructor-text">Instructor details coming soon.</p>
-              <div class="wksp-card__social">
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                </a>
+                <div class="wksp-instructor">
+                  <img src="assets/img/photos/Jazmin_1.JPG" alt="Jazmin Gastaldi" class="wksp-card__photo" />
+                  <p class="wksp-instructor__name">Jazmin Gastaldi</p>
+                </div>
+                <div class="wksp-instructor">
+                  <img src="assets/img/photos/Jorge4.jpg" alt="Jorge Romero" class="wksp-card__photo" />
+                  <p class="wksp-instructor__name">Jorge Romero</p>
+                </div>
               </div>
             </div>
           </article>
@@ -507,16 +512,18 @@
             </div>
             <div class="wksp-card__info">
               <div class="wksp-card__photos">
-                <img src="assets/img/person_icon.jpg" alt="" class="wksp-card__photo" />
-              </div>
-              <p class="wksp-card__instructor-text">Instructor details coming soon.</p>
-              <div class="wksp-card__social">
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                </a>
+                <div class="wksp-instructor">
+                  <img src="assets/img/photos/Gabriela_0.jpg" alt="Gabriela Romero Campos" class="wksp-card__photo" />
+                  <p class="wksp-instructor__name">Gabriela Romero Campos</p>
+                  <div class="wksp-card__social">
+                    <a href="https://www.linkedin.com/in/gabriela-romero-campos-88a520169/" target="_blank" rel="noopener noreferrer" class="wksp-card__social-link" style="color:#25728c" aria-label="LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=YUZhmLoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="wksp-card__social-link" style="color:#25728c" aria-label="Google Scholar">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.24 14.978 9.5 12 9.5c-2.977 0-5.548 1.74-6.758 4.269zM12 10a7 7 0 00-7 7 7 7 0 0014 0 7 7 0 00-7-7z"/></svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
@@ -534,16 +541,18 @@
             </div>
             <div class="wksp-card__info">
               <div class="wksp-card__photos">
-                <img src="assets/img/person_icon.jpg" alt="" class="wksp-card__photo" />
-              </div>
-              <p class="wksp-card__instructor-text">Instructor details coming soon.</p>
-              <div class="wksp-card__social">
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="#" class="wksp-card__social-link" tabindex="-1" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                </a>
+                <div class="wksp-instructor">
+                  <img src="assets/img/photos/Claudio.jpg" alt="Claudio Dias da Silva Junior" class="wksp-card__photo" />
+                  <p class="wksp-instructor__name">Claudio Dias da Silva Junior</p>
+                  <div class="wksp-card__social">
+                    <a href="https://www.linkedin.com/in/claudio-dias-da-silva-jr-906432b9/" target="_blank" rel="noopener noreferrer" class="wksp-card__social-link" style="color:#d99541" aria-label="LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=fsF33EMAAAAJ&hl=pt-BR" target="_blank" rel="noopener noreferrer" class="wksp-card__social-link" style="color:#d99541" aria-label="Google Scholar">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.24 14.978 9.5 12 9.5c-2.977 0-5.548 1.74-6.758 4.269zM12 10a7 7 0 00-7 7 7 7 0 0014 0 7 7 0 00-7-7z"/></svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
