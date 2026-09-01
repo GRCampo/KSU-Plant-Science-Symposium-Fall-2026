@@ -2421,3 +2421,32 @@ h1, h2, h3, h4, h5, h6,
   .frost-card__title{ font-size:1.5rem; }
   .frost-content{ filter:blur(4px); }
 }
+
+.poster-specs{
+  max-width:640px; margin:4rem auto; padding:2rem 1.5rem 0;
+  border-top:1px solid #e0e0e0;
+  scroll-margin-top:6rem;
+}
+.poster-specs__title{
+  font-family:"Cormorant SC",serif; font-weight:600;
+  font-size:1.6rem; color:#d99541; margin:0 0 1.25rem;
+}
+.poster-specs__list{
+  font-family:"Montserrat",sans-serif; font-weight:500;
+  font-size:1rem; line-height:1.9; color:#333;
+  margin:0 0 1.5rem; padding-left:1.25rem;
+}
+.poster-specs__list strong{ font-weight:700; color:#25728c; }
+.poster-specs__note{
+  font-family:"Montserrat",sans-serif; font-size:.9rem;
+  color:#666; margin:0;
+}
+.poster-specs__note a, .frost-card__link a{
+  color:#25728c; text-decoration:underline; text-underline-offset:3px;
+}
+.poster-specs__note a:hover, .frost-card__link a:hover{ color:#d99541; }
+
+.frost-card__link{
+  font-family:"Montserrat",sans-serif; font-weight:600;
+  font-size:.95rem; margin:1.25rem 0 0;
+}
